@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+.modal{
+  transform: translate(-50%, -50%);
+  width: calc(100% - 115px);
+  min-height: calc(100% - 70px);
+  height: auto;
+  
+}
+
+
+.modalParent{
+  background-color: rgba(0, 0, 0, 0.63);
+  transform: translate(-50%, -50%);
+}
+
+.blackOverlayPorfile{
+  background-color: rgba(0, 0, 0, 0.507);
+
+}
+
+
+.uploadModalPrent{
+  direction: rtl;
+
+}
+
+.modal-work-upload{
+  grid-template-columns: 170px 1fr 370px;
+  direction:ltr;
+}
+
+
+
+/* Designing for scroll-bar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: gainsboro;
+  border-radius: 5px;
+  cursor: pointer;
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(173, 173, 173);
+}
+
+
+
+input[type="radio"] {
+  /* remove standard background appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  /* create custom radiobutton appearance */
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  padding: 2px;
+  /* background-color only for content */
+  background-clip: content-box;
+  border: 1px solid #d6d6d6;
+  background-color: #e7e6e7;
+  border-radius: 50%;
+}
+
+/* appearance for checked radiobutton */
+input[type="radio"]:checked {
+  background-color: #E44C4D;
+}
+
+.shareButton{
+  width: calc(100% - 20px);
+}
+
+.dropDownHeight{
+  height: 45px;
+}
+
+.dropDownHeightMax{
+  height: 185px !important;
+  
+
+}
+
+
+.css-1okebmr-indicatorSeparator{
+  display: none;
+}
