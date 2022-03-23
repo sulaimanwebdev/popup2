@@ -95,6 +95,8 @@ input[type="radio"] {
 /* appearance for checked radiobutton */
 input[type="radio"]:checked {
   background-color: #E44C4D;
+  border-color: #E44C4D;
+
 }
 
 .shareButton{

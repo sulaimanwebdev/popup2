@@ -62,8 +62,24 @@ const Home = () => {
   const [image7, setimage7] = useState('opacity-40');
   const [image8, setimage8] = useState('opacity-40');
   const [image9, setimage9] = useState('opacity-40');
+  const [image10, setimage10] = useState('opacity-40');
 
 
+
+
+
+
+  const [selectedImage, setSelectedImage] = useState();
+
+
+
+const handleChange = (e) => {
+    if (e.target.files && e.target.files.length > 0) {
+      setSelectedImage(e.target.files[0]);
+      
+      
+    }
+  };
 
 
 
@@ -124,6 +140,30 @@ const Home = () => {
     
        <div className=" relative uploadModalPrent">
          <div className="overflow-y-scroll  h-full max-h-[380px] uploadImageScroll pl-[0.5rem] flex flex-col items-end">
+          
+       
+         {selectedImage && (
+            <img
+            onClick={()=>{
+              setimageURL(URL.createObjectURL(selectedImage))
+              setimage1("opacity-40");
+              setimage2("opacity-40");
+              setimage3("opacity-40");
+              setimage4("opacity-40");
+              setimage5("opacity-40");
+              setimage6("opacity-40");
+              setimage7("opacity-40");
+              setimage8("opacity-40");
+              setimage9("opacity-40");
+              setimage10("opacity-100");
+
+  
+  
+            }}
+            src={URL.createObjectURL(selectedImage)} alt="select image"  className={`w-[147px] h-[147px] cursor-pointer mb-3 rounded-[10px] ${image10}`}/>
+        )}
+          
+          
           <img
           onClick={()=>{
             setimageURL("/images/image1.svg")
@@ -136,6 +176,8 @@ const Home = () => {
             setimage7("opacity-40");
             setimage8("opacity-40");
             setimage9("opacity-40");
+            setimage10("opacity-40");
+
 
 
           }}
@@ -152,6 +194,8 @@ const Home = () => {
             setimage7("opacity-40");
             setimage8("opacity-40");
             setimage9("opacity-40");
+            setimage10("opacity-40");
+
 
 
           }}
@@ -168,6 +212,8 @@ const Home = () => {
             setimage7("opacity-40");
             setimage8("opacity-40");
             setimage9("opacity-40");
+            setimage10("opacity-40");
+
 
 
           }}
@@ -184,6 +230,8 @@ const Home = () => {
             setimage7("opacity-40");
             setimage8("opacity-40");
             setimage9("opacity-40");
+            setimage10("opacity-40");
+
 
 
           }}
@@ -200,6 +248,8 @@ const Home = () => {
             setimage7("opacity-40");
             setimage8("opacity-40");
             setimage9("opacity-40");
+            setimage10("opacity-40");
+
 
 
           }}
@@ -216,6 +266,8 @@ const Home = () => {
             setimage7("opacity-40");
             setimage8("opacity-40");
             setimage9("opacity-40");
+            setimage10("opacity-40");
+
 
 
           }}
@@ -232,6 +284,8 @@ const Home = () => {
             setimage7("opacity-100");
             setimage8("opacity-40");
             setimage9("opacity-40");
+            setimage10("opacity-40");
+
 
 
           }}
@@ -248,6 +302,8 @@ const Home = () => {
             setimage7("opacity-40");
             setimage8("opacity-100");
             setimage9("opacity-40");
+            setimage10("opacity-40");
+
 
 
           }}
@@ -264,15 +320,18 @@ const Home = () => {
             setimage7("opacity-40");
             setimage8("opacity-40");
             setimage9("opacity-100");
+            setimage10("opacity-40");
+
 
 
           }}
           src="/images/image9.svg" alt="select image"  className={`w-[147px] h-[147px] cursor-pointer rounded-[10px] ${image9}`}/>
          </div>
+         
       
       <label htmlFor='uploadNewImage' className="flex items-center bg-[#F3F3F3] transition hover:bg-[#e6e6e6] cursor-pointer justify-center w-[147px] absolute -bottom-[0.90rem] left-[0.9rem] h-[144px] mb-3 rounded-[7px]">
       <i className="far fa-plus text-[#C4C4C4] text-5xl"></i>
-      <input type="file" className='hidden' id='uploadNewImage' name='uploadNewImage'/>
+      <input  accept="image/*" onChange={handleChange} type="file" className='hidden' id='uploadNewImage' name='uploadNewImage'/>
       </label>
 
        </div>
@@ -553,9 +612,14 @@ const Home = () => {
  
  <div className={`max-w-[1500px]  px-10 py-10 grid gap-10 grid-cols-2  modal rounded-[15px] fixed transition top-1/2 left-1/2 bg-white z-10 max-h-[800px] h-screen `}>
    
-   <label htmlFor="uploadFromComputer" className='font-bold cursor-pointer absolute top-[140px] z-50 left-1/2 -translate-x-1/2 text-[18px] bg-[#E44C4D] w-[271px] transition hover:bg-[#be4040] h-[45px] text-white flex items-center justify-center rounded-full'>
+   <label 
+   onClick={()=>{
+    setchooseWorkModal('hidden');
+    setuploadWorkModal('');
+   }}
+   htmlFor="uploadNewImage" className='font-bold cursor-pointer absolute top-[140px] z-50 left-1/2 -translate-x-1/2 text-[18px] bg-[#E44C4D] w-[271px] transition hover:bg-[#be4040] h-[45px] text-white flex items-center justify-center rounded-full'>
    Upload from computer
-   <input type="file" className='hidden'/>
+
    </label>
  
  <div className='relative min-h-full '>
